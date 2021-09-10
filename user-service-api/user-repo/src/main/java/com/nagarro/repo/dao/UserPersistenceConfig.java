@@ -8,11 +8,11 @@ import org.springframework.context.annotation.Configuration;
 public class UserPersistenceConfig {
 
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
 
 
     @Bean("userPersistence")
-    public UserPersistenceImpl userPersistence(){
+    public UserPersistenceImpl userPersistence(UserRepo userRepo){
         return new UserPersistenceImpl(userRepo);
     }
 }
