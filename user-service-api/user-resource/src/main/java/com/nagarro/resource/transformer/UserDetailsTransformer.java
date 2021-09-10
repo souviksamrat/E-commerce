@@ -1,14 +1,14 @@
 package com.nagarro.resource.transformer;
 
-import com.nagarro.models.user.UserData;
+import com.nagarro.models.user.personalInformation.UserInformation;
 import com.nagarro.resource.rto.UserDetailsRto;
 
 import java.util.function.Function;
 
-public class UserDetailsTransformer implements Function<UserDetailsRto, UserData> {
+public class UserDetailsTransformer implements Function<UserDetailsRto, UserInformation> {
 
     @Override
-    public UserData apply(UserDetailsRto userDetailsRto) {
+    public UserInformation apply(UserDetailsRto userDetailsRto) {
         return null;
     }
 }

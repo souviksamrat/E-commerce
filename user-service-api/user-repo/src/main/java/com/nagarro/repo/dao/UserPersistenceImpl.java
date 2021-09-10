@@ -1,8 +1,8 @@
 package com.nagarro.repo.dao;
 
-import com.nagarro.repo.rto.UserDataRto;
+import com.nagarro.repo.rto.auth.UserDetailsRto;
 
-import java.util.Optional;
+
 
 public class UserPersistenceImpl implements UserPersistence {
 
@@ -13,17 +13,9 @@ public class UserPersistenceImpl implements UserPersistence {
     }
 
     @Override
-    public UserDataRto saveUser(UserDataRto userData) {
+    public UserDetailsRto saveUser(UserDetailsRto userData) {
         return userRepo.save(userData);
     }
 
-    @Override
-    public Optional<UserDataRto> getUser(String userName) {
-        return userRepo.findById(userName);
-    }
 
-    @Override
-    public boolean userExistOrNot(String userName) {
-        return userRepo.existsById(userName);
-    }
 }

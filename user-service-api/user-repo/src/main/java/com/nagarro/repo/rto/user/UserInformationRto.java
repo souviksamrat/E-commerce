@@ -1,22 +1,27 @@
-package com.nagarro.models.user;
+package com.nagarro.repo.rto.user;
 
-public class UserData {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "user_information")
+public class UserInformationRto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long userInformationId;
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNUmber;
-    private Address address;
 
-    public UserData() {
+    public UserInformationRto() {
     }
 
-    public UserData(String firstName, String lastName, String email, String phoneNUmber, Address address) {
+    public UserInformationRto(String firstName, String lastName, String email, String phoneNUmber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNUmber = phoneNUmber;
-        this.address = address;
     }
 
     public String getFirstName() {
@@ -51,22 +56,13 @@ public class UserData {
         this.phoneNUmber = phoneNUmber;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     @Override
     public String toString() {
-        return "UserData{" +
+        return "UserInformationRto{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNUmber='" + phoneNUmber + '\'' +
-                ", address=" + address +
                 '}';
     }
 }

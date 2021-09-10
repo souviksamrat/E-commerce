@@ -1,13 +1,12 @@
 package com.nagarro.repo.dao;
 
-import com.nagarro.repo.rto.UserDataRto;
 
+import com.nagarro.repo.rto.auth.UserDetailsRto;
 
 import java.util.Optional;
 
 public interface UserPersistence{
 
-    UserDataRto saveUser(UserDataRto userData);
-    Optional<UserDataRto> getUser(String userName);
-    boolean userExistOrNot(String userName);
+    UserDetailsRto saveUser(UserDetailsRto userData);
+
 }
